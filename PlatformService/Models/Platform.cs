@@ -9,12 +9,12 @@ namespace PlatformService.Models
         public int Id { get; set; }
 
         [Required]
-        public int Name { get; set; }
+        public string Name { get; set; }
 
         [Required]
-        public int Publisher { get; set; }
+        public string Publisher { get; set; }
 
         [Required]
-        public int Cost { get; set; }
+        public string Cost { get; set; }
     }
 }
