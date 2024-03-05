@@ -12,7 +12,7 @@ namespace CommandsService.Models
         public string HowTo { get; set; }
 
         [Required]
-        public string ComanndLine { get; set; }
+        public string CommandLine { get; set; }
 
         [Required]
         public int PlatformId { get; set; }

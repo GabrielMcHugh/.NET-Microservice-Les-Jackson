@@ -36,10 +36,10 @@ namespace CommandsService.Controllers
             return Ok(_mapper.Map<IEnumerable<CommandReadDto>>(commands));
         }
 
-        [HttpGet("{commandID}", Name = "GetCommandForPlaform")]
-        public ActionResult<CommandReadDto> GetCommandForPlaform(int platformId, int commandId)
+        [HttpGet("{commandID}", Name = "GetCommandForPlatform")]
+        public ActionResult<CommandReadDto> GetCommandForPlatform(int platformId, int commandId)
         {
-            Console.WriteLine($"--> Hit GetCommandsForPlatform: {platformId} / {commandId}");
+            Console.WriteLine($"--> Hit GetCommandForPlatform: {platformId} / {commandId}");
 
             if (!_repository.PlatformExists(platformId))
             {
@@ -62,7 +62,7 @@ namespace CommandsService.Controllers
             CommandCreateDto commandDto
         )
         {
-            Console.WriteLine($"--> Hit GetCommandsForPlatform: {platformId}");
+            Console.WriteLine($"--> Hit CreateCommandForPlatform: {platformId}");
 
             if (!_repository.PlatformExists(platformId))
             {
@@ -77,7 +77,7 @@ namespace CommandsService.Controllers
             var commandReadDto = _mapper.Map<CommandReadDto>(command);
 
             return CreatedAtRoute(
-                nameof(GetCommandsForPlatform),
+                nameof(GetCommandForPlatform),
                 new { platformId = platformId, commandId = commandReadDto.Id },
                 commandReadDto
             );
